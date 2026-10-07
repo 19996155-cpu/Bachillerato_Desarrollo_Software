@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Segundo Año - Desarrollo de Software</title>
+        <link rel="stylesheet" href="css/segundo.css">
+</head>
+<body>
+        <nav>
+            <div class="logo">
+                <img src="imagenes/DS.png" alt="Logo">
+        </div>
+            <ul class="menu">
+                <li><a href="inicio.html" target="contenido">Inicio</a></li>
+                <li><a href="informacion.html" target="contenido">Informacion</a></li>
+                <li><a href="primeraño.html" target="contenido">Primer Año</a></li>
+                <li><a href="segundoaño.html" target="contenido">Segundo Año</a></li>
+                <li><a href="terceraño.html" target="contenido">Tercer Año</a></li>
+                <li><a href="contáctanos.html" target="contenido">Contáctanos</a></li>
+        </ul>
+    </nav>
+        <main>
+            <section class="segundo-año">
+                <div class="contenido-año">
+                    <p class="subtitulo">BACHILLERATO EN DESARROLLO DE SOFTWARE</p>
+                    <h1>SEGUNDO AÑO</h1>
+                    <p class="descripcion">
+                        En segundo año, el estudiante deja atrás buena parte de los fundamentos iniciales y comienza a
+                        trabajar con conceptos más relacionados con el diseño y construcción de sistemas informáticos.
+                        El plan de estudios contempla ocho módulos técnicos principales, donde se integran conocimientos de
+                        análisis, programación, bases de datos, redes, arquitectura de software, inglés técnico,
+                        emprendimiento y desarrollo de proyectos web.
+                    </p>
+                    <div class="materias">
+                        <div class="materia">
+                            <h3>1. Diseño de sistemas informáticos</h3>
+                            <p>Código: BTVDS 2.1<br>Duración: 108 horas / 6 semanas.</p>
+                            <p>Aprende a transformar los requisitos de un sistema en un diseño organizado.</p>
+                            <button class="boton-info" onclick="abrirVentana(1)">VER INFORMACIÓN</button>
+                    </div>
+                        <div class="materia">
+                            <h3>2. Diseño de arquitectura de software</h3>
+                            <p>Código: BTVDS 2.2<br>Duración: 108 horas / 6 semanas.</p>
+                            <p>Aprende cómo se organiza internamente un sistema de software y sus componentes.</p>
+                            <button class="boton-info" onclick="abrirVentana(2)">VER INFORMACIÓN</button>
+                    </div>
+                        <div class="materia">
+                            <h3>3. Programación de componentes de base de datos</h3>
+                            <p>Código: BTVDS 2.3<br>Duración: 90 horas / 5 semanas.</p>
+                            <p>Conoce cómo almacenar, organizar y administrar información mediante bases de datos.</p>
+                            <button class="boton-info" onclick="abrirVentana(3)">VER INFORMACIÓN</button>
+                    </div>
+                        <div class="materia">
+                            <h3>4. Desarrollo de programación orientada a objetos</h3>
+                            <p>Código: BTVDS 2.4<br>Duración: 90 horas / 5 semanas.</p>
+                            <p>Introducción a la programación orientada a objetos y sus principales conceptos.</p>
+                            <button class="boton-info" onclick="abrirVentana(4)">VER INFORMACIÓN</button>
+                    </div>
+                        <div class="materia">
+                            <h3>5. Diseño e instalación de redes LAN</h3>
+                            <p>Código: BTVDS 2.5<br>Duración: 90 horas / 5 semanas.</p>
+                            <p>Conoce el funcionamiento y estructura de las redes informáticas LAN.</p>
+                            <button class="boton-info" onclick="abrirVentana(5)">VER INFORMACIÓN</button>
+                    </div>
+                        <div class="materia">
+                            <h3>6. Conversación en inglés sobre arquitectura de software y bases de datos</h3>
+                            <p>Código: BTVDS 2.6<br>Duración: 72 horas / 4 semanas.</p>
+                            <p>Aprende vocabulario técnico en inglés relacionado con informática.</p>
+                            <button class="boton-info" onclick="abrirVentana(6)">VER INFORMACIÓN</button>
+                    </div>
+                        <div class="materia">
+                            <h3>7. Diseño de planes de negocio en asociatividad cooperativa</h3>
+                            <p>Código: BTVDS 2.7<br>Duración: 72 horas / 4 semanas.</p>
+                            <p>Relaciona los conocimientos tecnológicos con el mundo empresarial.</p>
+                            <button class="boton-info" onclick="abrirVentana(7)">VER INFORMACIÓN</button>
+                    </div>
+                        <div class="materia">
+                            <h3>8. Proyecto innovador de portales web</h3>
+                            <p>Código: BTVDS 2.8<br>Duración: 72 horas / 4 semanas.</p>
+                            <p>Integra los conocimientos del segundo año mediante el desarrollo de un portal web.</p>
+                            <button class="boton-info" onclick="abrirVentana(8)">VER INFORMACIÓN</button>
+                    </div>
+        </section>
+             <footer class="pie-pagina">
+                <div class="footer-contenido">
+                    <div class="footer-info">
+                        <h2>Desarrollo de Software</h2>
+                        <p>
+                            Conoce más sobre el Bachillerato Técnico
+                            Vocacional en Desarrollo de Software,
+                            sus materias y oportunidades.
+                        </p>
+                </div>
+                    <div class="footer-enlaces">
+                        <h3>Enlaces rápidos</h3>
+                        <ul>
+                            <li><a href="inicio.html">Inicio</a></li>
+                            <li><a href="informacion.html">Más información</a></li>
+                            <li><a href="contáctanos.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+                <div class="footer-final">
+                    <p>
+                        © 2026 Bachillerato en Desarrollo de Software.
+                        Todos los derechos reservados.
+                    </p>
+            </div>
+        </footer>
+    </main>
+        <div id="ventana" class="ventana">
+        <div class="contenido-ventana">
+            <button class="cerrar" onclick="cerrarVentana()">X</button>
+            <div class="body-ventana">
+                <h2 id="titulo-ventana"></h2>
+                <img id="imagen-ventana" src="" alt="">
+                <p id="texto-ventana"></p>
+        </div>
+    </div>
+</div>
+        <script src="js/app.js"></script>
+        <script src="js/ventana2.js"></script>
+   
+</body>
+</html>
