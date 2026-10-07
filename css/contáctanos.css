@@ -1,0 +1,981 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    background-color: #000000;
+}
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+    color: #ffffff;
+}
+
+nav {
+    width: 94%;
+    max-width: 1450px;
+    min-height: 82px;
+    margin: 18px auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 28px;
+    background: linear-gradient(135deg,
+            #252525,
+            #3c3c3c);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Línea decorativa superior */
+nav::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            #ffffff,
+            transparent);
+    border-radius: 10px;
+}
+
+/* =========================
+   EFECTO HOVER DE LA BARRA
+========================= */
+nav:hover {
+    border-color: rgba(255, 255, 255, 0.99);
+    box-shadow:
+        0 12px 35px rgb(255, 255, 255),
+        0 0 25px rgb(255, 255, 255);
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 35px;
+    padding-right: 28px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
+
+/* =========================
+   MENÚ PRINCIPAL
+========================= */
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    white-space: nowrap;
+}
+
+/* =========================
+   ENLACES
+========================= */
+.menu li a {
+    position: relative;
+    display: block;
+    padding: 13px 14px;
+    color: #e6e6e6;
+    text-decoration: none;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    border-radius: 9px;
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* =========================
+   EFECTO HOVER EN ENLACES
+========================= */
+.menu li a:hover {
+    color: #000000;
+    background: rgba(254, 253, 254, 0.51);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   LÍNEA ROJA ANIMADA
+========================= */
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #000000;
+    border-radius: 20px;
+    transform: translateX(-50%);
+    transition:
+        width 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.menu li a:hover::after {
+    width: 45%;
+    box-shadow:
+        0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+/* =========================
+   ENLACE ACTIVO
+========================= */
+.menu li a.activo {
+    color: #ffffff;
+    background: rgb(255, 255, 255);
+}
+
+.menu li a.activo::after {
+    width: 45%;
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* =========================
+   OCULTAR AL BAJAR
+========================= */
+nav.ocultar {
+    transform: translateY(-130%);
+}
+
+/* =========================
+   ANIMACIÓN INICIAL
+========================= */
+nav {
+    animation: entradaMenu 0.7s ease;
+}
+
+@keyframes entradaMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   CONTÁCTANOS
+========================= */
+.contactanos {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+.encabezado-contacto {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    min-height: 560px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+/* =========================
+   FONDO TECNOLÓGICO
+========================= */
+.encabezado-contacto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.98) 0%,
+            rgba(0, 0, 0, 0.90) 25%,
+            rgba(0, 0, 0, 0.65) 50%,
+            rgba(0, 0, 0, 0.30) 75%,
+            rgba(0, 0, 0, 0.05) 100%),
+        url("../imagenes/in2.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+}
+
+/* =========================
+   TEXTO
+========================= */
+.texto-contacto {
+    position: relative;
+    z-index: 1;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtitulo {
+    color: #c8102e;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.texto-contacto h1 {
+    color: #ffffff;
+    font-size: clamp(50px, 7vw, 85px);
+    line-height: 0.95;
+    max-width: 650px;
+}
+
+.linea {
+    width: 90px;
+    height: 5px;
+    background-color: #c8102e;
+    margin: 25px 0;
+}
+
+.descripcion {
+    max-width: 620px;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   BOTÓN MAPA
+========================= */
+.boton-mapa {
+    width: fit-content;
+    padding: 14px 25px;
+    background-color: #c8102e;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.boton-mapa:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   INFORMACIÓN
+========================= */
+.informacion-contacto {
+    position: relative;
+    z-index: 1;
+    align-self: center;
+    margin: 40px;
+    background-color: rgba(35, 35, 35, 0.95);
+    border: 1px solid #555454;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.bloque-contacto {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+    border-bottom: 1px solid #555454;
+    transition: 0.3s;
+}
+
+.bloque-contacto:last-child {
+    border-bottom: none;
+}
+
+.bloque-contacto:hover {
+    background-color: #000000;
+    border-left: 4px solid #c8102e;
+    padding-left: 21px;
+}
+
+.icono {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c8102e;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+/* =========================
+   TEXTO INFORMACIÓN
+========================= */
+.bloque-contacto>div:last-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.bloque-contacto h2 {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.bloque-contacto p {
+    color: #cccccc;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* =========================
+   CORREO
+========================= */
+.bloque-contacto:nth-child(3) h2 {
+    font-size: 15px;
+    white-space: normal;
+}
+
+.bloque-contacto:nth-child(3) p {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* =========================
+   MAPA
+========================= */
+.mapa-seccion {
+    margin-top: 70px;
+}
+
+.titulo-mapa {
+    margin-bottom: 25px;
+}
+
+.titulo-mapa p {
+    color: #c8102e;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.titulo-mapa h2 {
+    color: #ffffff;
+    font-size: 35px;
+}
+
+.titulo-mapa h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #c8102e;
+    margin-top: 15px;
+}
+
+.mapa {
+    width: 100%;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #555454;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(80%);
+    transition: 0.5s;
+}
+
+.mapa:hover iframe {
+    filter: grayscale(0%);
+}
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+.pie-pagina {
+    width: 100%;
+    background: #0c0c0c;
+    color: #ffffff;
+    margin-top: 80px;
+    border-top: 1px solid #292929;
+    position: relative;
+}
+
+/* LÍNEA DECORATIVA */
+
+.pie-pagina::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: #c8102e;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(200, 16, 46, 0.6);
+}
+
+/* CONTENIDO */
+
+.footer-contenido {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 65px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+}
+
+/* INFORMACIÓN */
+
+.footer-info {
+    padding: 25px;
+    border: 1px solid #292929;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #151515, #101010);
+    transition: 0.4s ease;
+}
+
+.footer-info:hover {
+    border-color: #c8102e;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(200, 16, 46, 0.12);
+}
+
+.footer-info h2 {
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 22px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333333;
+    position: relative;
+}
+
+.footer-info h2::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 65px;
+    height: 2px;
+    background: #c8102e;
+}
+
+.footer-info p {
+    color: #a5a5a5;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 500px;
+}
+
+/* ENLACES */
+
+.footer-enlaces {
+    padding: 25px;
+}
+
+.footer-enlaces h3 {
+    font-size: 21px;
+    margin-bottom: 28px;
+    color: #ffffff;
+    position: relative;
+    padding-left: 15px;
+    border-left: 3px solid #c8102e;
+}
+
+.footer-enlaces ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-enlaces li {
+    margin-bottom: 18px;
+}
+
+.footer-enlaces a {
+    display: inline-block;
+    color: #999999;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.footer-enlaces a::before {
+    content: "›";
+    color: #c8102e;
+    margin-right: 10px;
+    font-size: 19px;
+    transition: 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+    color: #ffffff;
+    transform: translateX(6px);
+}
+
+/* PARTE INFERIOR */
+
+.footer-final {
+    border-top: 1px solid #292929;
+    padding: 25px 15px;
+    text-align: center;
+    background: #080808;
+}
+
+.footer-final p {
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.8;
+    letter-spacing: 0.4px;
+    transition: 0.3s ease;
+}
+
+.footer-final p:hover {
+    color: #bdbdbd;
+}
+
+/* EFECTO DE LUZ */
+
+.footer-enlaces a:hover::before {
+    color: #ff1744;
+    text-shadow: 0 0 10px #c8102e;
+}
+/* =========================
+RESPONSIVE - TABLETAS
+========================= */
+
+@media (max-width: 1024px) {
+
+
+nav {
+    width: 96%;
+    padding: 12px 18px;
+}
+
+.logo {
+    margin-right: 15px;
+    padding-right: 15px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+}
+
+.menu {
+    justify-content: center;
+    gap: 2px;
+}
+
+.menu li a {
+    padding: 11px 9px;
+    font-size: 12px;
+}
+
+.contactanos {
+    width: 94%;
+}
+
+.encabezado-contacto {
+    grid-template-columns: 1fr 0.9fr;
+    min-height: 500px;
+}
+
+.texto-contacto {
+    padding: 55px 30px;
+}
+
+.texto-contacto h1 {
+    font-size: clamp(42px, 6vw, 65px);
+}
+
+.informacion-contacto {
+    margin: 20px;
+}
+
+.bloque-contacto {
+    padding: 20px;
+    gap: 12px;
+}
+
+.footer-contenido {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 35px;
+}
+
+
+}
+
+/* =========================
+RESPONSIVE - TABLETAS PEQUEÑAS
+========================= */
+
+@media (max-width: 768px) {
+
+
+nav {
+    position: sticky;
+    top: 8px;
+    width: 96%;
+    margin: 10px auto;
+    padding: 15px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 12px;
+    justify-content: center;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+}
+
+.menu {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.menu li a {
+    font-size: 12px;
+    padding: 10px 12px;
+}
+
+.contactanos {
+    width: 94%;
+    padding: 45px 0;
+}
+
+.encabezado-contacto {
+    grid-template-columns: 1fr;
+    min-height: auto;
+}
+
+.encabezado-contacto::before {
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.88),
+            rgba(0, 0, 0, 0.80)
+        ),
+        url("../imagenes/in2.jpeg");
+    background-position: center;
+}
+
+.texto-contacto {
+    padding: 60px 35px 30px;
+}
+
+.texto-contacto h1 {
+    font-size: clamp(40px, 8vw, 65px);
+    max-width: 100%;
+}
+
+.descripcion {
+    font-size: 15px;
+}
+
+.informacion-contacto {
+    width: calc(100% - 60px);
+    margin: 20px auto 45px;
+}
+
+.mapa-seccion {
+    margin-top: 45px;
+}
+
+.titulo-mapa h2 {
+    font-size: 29px;
+}
+
+.mapa {
+    height: 350px;
+}
+
+.footer-contenido {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 45px 15px;
+}
+
+.footer-info,
+.footer-enlaces {
+    padding: 20px;
+}
+
+
+}
+
+/* =========================
+RESPONSIVE - CELULARES
+========================= */
+
+@media (max-width: 480px) {
+
+
+nav {
+    width: 96%;
+    padding: 12px 8px;
+    gap: 10px;
+    border-radius: 12px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+}
+
+.menu {
+    gap: 3px;
+}
+
+.menu li a {
+    font-size: 10px;
+    padding: 9px 8px;
+    letter-spacing: 0;
+}
+
+.contactanos {
+    width: 92%;
+    padding: 30px 0;
+}
+
+.encabezado-contacto {
+    border-radius: 10px;
+}
+
+.texto-contacto {
+    padding: 45px 20px 25px;
+}
+
+.subtitulo {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.texto-contacto h1 {
+    font-size: clamp(36px, 11vw, 48px);
+    line-height: 1;
+}
+
+.linea {
+    width: 65px;
+    height: 4px;
+    margin: 20px 0;
+}
+
+.descripcion {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.boton-mapa {
+    padding: 12px 18px;
+    font-size: 12px;
+}
+
+.informacion-contacto {
+    width: calc(100% - 30px);
+    margin: 15px auto 35px;
+    border-radius: 10px;
+}
+
+.bloque-contacto {
+    padding: 18px 14px;
+    gap: 12px;
+}
+
+.icono {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 17px;
+}
+
+.bloque-contacto h2 {
+    font-size: 13px;
+}
+
+.bloque-contacto p {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.bloque-contacto:nth-child(3) p {
+    font-size: 10px;
+}
+
+.titulo-mapa {
+    margin-bottom: 20px;
+}
+
+.titulo-mapa p {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.titulo-mapa h2 {
+    font-size: 25px;
+}
+
+.mapa {
+    height: 280px;
+    border-radius: 8px;
+}
+
+.footer-contenido {
+    width: 94%;
+    padding: 35px 5px;
+    gap: 20px;
+}
+
+.footer-info {
+    padding: 18px;
+}
+
+.footer-info h2 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-enlaces {
+    padding: 18px;
+}
+
+.footer-enlaces h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-enlaces li {
+    margin-bottom: 14px;
+}
+
+.footer-enlaces a {
+    font-size: 13px;
+}
+
+.footer-final {
+    padding: 20px 12px;
+}
+
+.footer-final p {
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+}
+
+/* =========================
+EVITAR DESBORDAMIENTO
+========================= */
+
+@media (max-width: 768px) {
+
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.contactanos,
+.encabezado-contacto,
+.footer-contenido,
+.mapa-seccion {
+    max-width: 100%;
+}
+
+.texto-contacto,
+.informacion-contacto,
+.footer-info,
+.footer-enlaces {
+    min-width: 0;
+}
+
+.mapa iframe {
+    display: block;
+}
+
+
+}
